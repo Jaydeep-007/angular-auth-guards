@@ -1,0 +1,27 @@
+<table class="table table-bordered border-primary">
+    <thead *ngIf="productDetail != null">
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Price</th>
+            <th scope="col">Category</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">{{productDetail?.id}}</th>
+            <td>{{productDetail?.title}}</td>
+            <td>{{productDetail?.description}}</td>
+            <td>{{productDetail?.price | currency}}</td>
+            <td>{{productDetail?.category}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="btn-group" role="group" aria-label="Basic mixed styles example">
+    <button type="button" class="btn btn-danger"><a class="nav-link" routerLink="offers">Product Offers</a></button>
+    <button type="button" class="btn btn-warning"><a class="nav-link" routerLink="rating">Product Rating</a></button>
+</div>
+
+<router-outlet></router-outlet>

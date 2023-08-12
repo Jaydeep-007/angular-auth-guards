@@ -1,0 +1,12 @@
+<div class="product-rating container">
+  <form (ngSubmit)="rateProduct()" #ratingForm="ngForm" class="mb-3" style="margin-top: 2%;">
+    <div class="form-group">
+      <label for="rating">Rating:</label>
+      <input type="number" id="rating" name="rating" min="1" max="5" required
+             [(ngModel)]="selectedRating" class="form-control">
+    </div>
+    
+    <button type="submit" [disabled]="ratingForm.invalid" class="btn btn-primary" style="margin-top: 2%;">Rate Product</button>
+  </form>
+  <button (click)="saveChanges()" [disabled]="!hasUnsavedChanges()" class="btn btn-success">Save Changes</button>
+</div>

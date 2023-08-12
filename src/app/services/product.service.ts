@@ -25,4 +25,9 @@ export class ProductService {
     const headers = this.getHeaders();
     return this.http.get<any[]>(`${this.apiUrl}/products`, { headers });
   }
+
+  getProductDetailById(id : number){
+    const headers = this.getHeaders();
+    return this.http.get(`${this.apiUrl}/products/` + id, { headers })
+  }
 }
